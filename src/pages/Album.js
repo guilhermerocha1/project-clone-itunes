@@ -1,47 +1,102 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
-import getMusics from '../services/musicsAPI';
+import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import getMusics from '../services/musicsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
-class Album extends React.Component {
+export default class Album extends Component {
   constructor() {
     super();
-
     this.state = {
-      bandName: '',
-      albumName: '',
-      dataAlbum: [],
-      albumImg: '',
+      musics: [],
+      isLoading: false,
+      favorites: [],
     };
   }
 
-  componentDidMount() {
-    this.fetchMusic();
+  async componentDidMount() {
+    this.musicSearch();
+    this.favoriteSongs();
   }
 
-  fetchMusic = async () => {
-    const { match } = this.props;
-    const response = await getMusics(match.params.id);
-    this.setState({
-      dataAlbum: response,
-      bandName: response[0].artistName,
-      albumName: response[0].collectionName,
-      albumImg: response[0].artworkUrl100,
-    });
+  favoriteSongs = async () => {
+    this.setState({ isLoading: true });
+    const favorites = await getFavoriteSongs();
+    this.setState(() => ({ isLoading: false, favorites }));
   }
+
+  musicSearch = async () => {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    const musics = await getMusics(id);
+    musics.forEach((music) => {
+      music.checked = false;
+    });
+    this.setState({ musics });
+  };
+
+  saveSong = async ({ target: { name, checked } }) => {
+    this.setState({ isLoading: true });
+    const { musics, favorites } = this.state;
+    const filterTrack = musics.find(({ trackName }) => trackName === name);
+    const filterIndex = musics.findIndex((song) => song.trackName === name);
+    musics[filterIndex].checked = !musics[filterIndex].checked;
+
+    if (checked) {
+      await addSong(filterTrack);
+      this.setState((prevState) => (
+        { favorites: [...prevState.favorites, filterTrack] }));
+    } else {
+      await removeSong(filterTrack);
+      const tracks = favorites.filter((song) => song.trackId !== filterTrack.trackId);
+      this.setState({ favorites: tracks });
+    }
+    this.setState({ isLoading: false });
+  };
+
+  MountMusics = () => {
+    const { musics, isLoading, favorites } = this.state;
+    const name = musics[0].artistName;
+    const collection = musics[0].collectionName;
+    const { artworkUrl100 } = musics[0];
+
+    return (
+      isLoading
+        ? <Loading />
+        : (
+          <section>
+            <img src={ artworkUrl100 } alt="Capa do album" />
+            <p data-testid="artist-name">{name}</p>
+            <p data-testid="album-name">{collection}</p>
+            {musics.slice(1).map((song) => {
+              const { trackName, trackId, previewUrl } = song;
+              return (
+                <MusicCard
+                  key={ trackId }
+                  name={ trackName }
+                  preview={ previewUrl }
+                  id={ trackId }
+                  checked={ favorites.some((check) => check.trackId === trackId) }
+                  onChange={ this.saveSong }
+                  favorites={ favorites }
+                />
+              );
+            })}
+          </section>
+        ));
+  };
 
   render() {
-    const { dataAlbum, bandName, albumImg, albumName } = this.state;
+    const { musics } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
-        <section>
-          <img src={ albumImg } alt={ albumName } />
-          <h1 data-testid="album-name">{ albumName }</h1>
-          <h2 data-testid="artist-name">{ bandName }</h2>
-        </section>
-        <MusicCard musics={ dataAlbum } />
+        {musics.length === 0 ? <Loading /> : this.MountMusics()}
       </div>
     );
   }
@@ -49,10 +104,9 @@ class Album extends React.Component {
 
 Album.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-
-export default Album;
+    isExact: PropTypes.bool,
+    params: PropTypes.objectOf(PropTypes.string),
+    path: PropTypes.string,
+    url: PropTypes.string,
+  }),
+}.isRequired;

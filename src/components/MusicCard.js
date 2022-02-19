@@ -1,29 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class MusicCard extends React.Component {
+export default class MusicCard extends Component {
   render() {
-    const { musics } = this.props;
+    const { name, preview, id, checked, onChange, thumb } = this.props;
     return (
-      <div>
-        {musics.filter((songs) => songs.kind === 'song').map((musicsList) => (
-          <section key={ musicsList.trackTimeMillis }>
-            <p>{musicsList.trackName}</p>
-            <audio data-testid="audio-component" src={ musicsList.previewUrl } controls>
-              <track kind="captions" />
-              O seu navegador não suporta o elemento
-              <code>audio</code>
-              .
-            </audio>
-          </section>
-        ))}
+      <div className="musicCard">
+        {thumb && <img src={ thumb } alt="Album da música" />}
+        <h1>{name}</h1>
+        <audio data-testid="audio-component" src={ preview } controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          <code>audio</code>
+        </audio>
+
+        <label htmlFor={ id }>
+          Favorita
+          <input
+            type="checkbox"
+            data-testid={ `checkbox-music-${id}` }
+            id={ id }
+            name={ name }
+            checked={ checked }
+            onChange={ onChange }
+          />
+        </label>
       </div>
     );
   }
 }
 
 MusicCard.propTypes = {
-  musics: PropTypes.shape().isRequired,
-};
-
-export default MusicCard;
+  name: PropTypes.string,
+  preview: PropTypes.string,
+  id: PropTypes.string,
+  saveTrack: PropTypes.func,
+}.isRequired;
