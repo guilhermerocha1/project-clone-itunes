@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/project-clone-itunes/static/css/main.5277ebbc.chunk.css",
-    "main.js": "/project-clone-itunes/static/js/main.8cb4d771.chunk.js",
-    "main.js.map": "/project-clone-itunes/static/js/main.8cb4d771.chunk.js.map",
+    "main.js": "/project-clone-itunes/static/js/main.39c93b2c.chunk.js",
+    "main.js.map": "/project-clone-itunes/static/js/main.39c93b2c.chunk.js.map",
     "runtime-main.js": "/project-clone-itunes/static/js/runtime-main.7260989c.js",
     "runtime-main.js.map": "/project-clone-itunes/static/js/runtime-main.7260989c.js.map",
-    "static/js/2.42d2ce9e.chunk.js": "/project-clone-itunes/static/js/2.42d2ce9e.chunk.js",
-    "static/js/2.42d2ce9e.chunk.js.map": "/project-clone-itunes/static/js/2.42d2ce9e.chunk.js.map",
+    "static/js/2.19d696ce.chunk.js": "/project-clone-itunes/static/js/2.19d696ce.chunk.js",
+    "static/js/2.19d696ce.chunk.js.map": "/project-clone-itunes/static/js/2.19d696ce.chunk.js.map",
     "index.html": "/project-clone-itunes/index.html",
     "static/css/main.5277ebbc.chunk.css.map": "/project-clone-itunes/static/css/main.5277ebbc.chunk.css.map",
-    "static/js/2.42d2ce9e.chunk.js.LICENSE.txt": "/project-clone-itunes/static/js/2.42d2ce9e.chunk.js.LICENSE.txt"
+    "static/js/2.19d696ce.chunk.js.LICENSE.txt": "/project-clone-itunes/static/js/2.19d696ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7260989c.js",
-    "static/js/2.42d2ce9e.chunk.js",
+    "static/js/2.19d696ce.chunk.js",
     "static/css/main.5277ebbc.chunk.css",
-    "static/js/main.8cb4d771.chunk.js"
+    "static/js/main.39c93b2c.chunk.js"
   ]
 }
