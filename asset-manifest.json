@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/project-clone-itunes/static/css/main.5277ebbc.chunk.css",
+    "main.js": "/project-clone-itunes/static/js/main.1f37ec85.chunk.js",
+    "main.js.map": "/project-clone-itunes/static/js/main.1f37ec85.chunk.js.map",
+    "runtime-main.js": "/project-clone-itunes/static/js/runtime-main.7260989c.js",
+    "runtime-main.js.map": "/project-clone-itunes/static/js/runtime-main.7260989c.js.map",
+    "static/js/2.19d696ce.chunk.js": "/project-clone-itunes/static/js/2.19d696ce.chunk.js",
+    "static/js/2.19d696ce.chunk.js.map": "/project-clone-itunes/static/js/2.19d696ce.chunk.js.map",
+    "index.html": "/project-clone-itunes/index.html",
+    "static/css/main.5277ebbc.chunk.css.map": "/project-clone-itunes/static/css/main.5277ebbc.chunk.css.map",
+    "static/js/2.19d696ce.chunk.js.LICENSE.txt": "/project-clone-itunes/static/js/2.19d696ce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7260989c.js",
+    "static/js/2.19d696ce.chunk.js",
+    "static/css/main.5277ebbc.chunk.css",
+    "static/js/main.1f37ec85.chunk.js"
+  ]
+}
