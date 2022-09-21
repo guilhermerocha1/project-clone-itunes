@@ -1,6 +1,7 @@
 {
   "name": "itunes",
   "version": "0.1.0",
+  "homepage": "https://guilhermerocha1.github.io/project-clone-itunes",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -12,6 +13,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +47,7 @@
     "eslint-config-trybe-frontend": "^1.2.2",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-sonarjs": "^0.9.1",
+    "gh-pages": "^4.0.0",
     "identity-obj-proxy": "^3.0.0",
     "prop-types": "^15.7.2",
     "stylelint": "^13.8.0",
