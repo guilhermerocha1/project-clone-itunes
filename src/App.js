@@ -8,6 +8,8 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
+const routeDefault = 'project-clone-itunes';
+
 class App extends React.Component {
   render() {
     return (
@@ -15,12 +17,12 @@ class App extends React.Component {
         <p>TrybeTunes</p>
         <BrowserRouter>
           <Switch>
-            <Route path="/" component={ Login } />
-            <Route path="/search" component={ Search } />
-            <Route path="/album/:id" render={ (props) => <Album { ...props } /> } />
-            <Route path="/favorites" component={ Favorites } />
-            <Route path="/profile/edit" component={ ProfileEdit } />
-            <Route path="/profile" component={ Profile } />
+            <Route path={`/${routeDefault}`} component={ Login } />
+            <Route path='/search' component={ Search } />
+            <Route path='/album/:id' render={ (props) => <Album { ...props } /> } />
+            <Route path='/favorites' component={ Favorites } />
+            <Route path='/profile/edit' component={ ProfileEdit } />
+            <Route path='/profile' component={ Profile } />
             <Route path="/*" component={ NotFound } />
           </Switch>
         </BrowserRouter>
