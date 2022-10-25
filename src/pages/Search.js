@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import Form from '../components/Form';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import '../styles/Search.css';
 
 const MIN_LENGTH_SEARCH = 2;
 
@@ -47,7 +48,7 @@ class Search extends Component {
         disabled={ activateButton }
         onClick={ this.FilterAlbum }
         className="form"
-        placeholder="Nome do Artista"
+        placeholder="DIGITE SUA PESQUISA"
       />
     );
   }

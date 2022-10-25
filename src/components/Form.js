@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Search.css';
 
 class Form extends Component {
   render() {
@@ -33,6 +34,7 @@ class Form extends Component {
           type="submit"
           disabled={ !disabled }
           onClick={ onClick }
+          id='button-search'
         >
           {txtBtn}
         </button>
