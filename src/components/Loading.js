@@ -1,8 +1,9 @@
 import React from 'react';
+import '../styles/Loading.css';
 
 class Loading extends React.Component {
   render() {
-    return (<p>Carregando...</p>);
+    return (<h1 className='lds-roller'>Carregando...</h1>);
   }
 }
 
