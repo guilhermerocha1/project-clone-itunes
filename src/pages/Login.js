@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../styles/Login.css';
 
 const MIN_LENGTH = 3;
 
@@ -44,25 +45,28 @@ class Login extends React.Component {
   render() {
     const { disabledbutton, user, redirect, loading } = this.state;
     const formLogin = (
-      <div data-testid="page-login">
-        <label htmlFor="name-input">
-          Nome:
+      <div data-testid="page-login" className='main-login'>
+        <h1 id='trybe'>trybe</h1><h1 id='tunes'>tunes</h1>
+        <div className='login'>
           <input
-            value={ user }
+            value={user}
             name="user"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
             type="text"
+            placeholder='qual é o seu nome ?'
             data-testid="login-name-input"
+            className='input-name'
           />
-        </label>
-        <button
-          type="submit"
-          data-testid="login-submit-button"
-          disabled={ disabledbutton }
-          onClick={ this.handleClick }
-        >
-          Entrar
-        </button>
+          <button
+            className='button-submit'
+            type="submit"
+            data-testid="login-submit-button"
+            disabled={disabledbutton}
+            onClick={this.handleClick}
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     );
     return (
