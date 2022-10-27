@@ -18,27 +18,25 @@ class Form extends Component {
     } = this.props;
 
     return (
-      <form className={ className }>
-        <label htmlFor={ id }>
-          <input
-            data-testid={ tidInput }
-            type="text"
-            placeholder={ placeholder }
-            id={ id }
-            value={ value }
-            onChange={ onChange }
-          />
-        </label>
+      <div className={className}>
+        <input
+          data-testid={tidInput}
+          type="text"
+          placeholder={placeholder}
+          id={id}
+          value={value}
+          onChange={onChange}
+        />
         <button
-          data-testid={ tidBtn }
+          data-testid={tidBtn}
           type="submit"
-          disabled={ !disabled }
-          onClick={ onClick }
+          disabled={!disabled}
+          onClick={onClick}
           id='button-search'
         >
           {txtBtn}
         </button>
-      </form>
+      </div>
     );
   }
 }
