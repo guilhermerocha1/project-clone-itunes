@@ -1,0 +1,10 @@
+.capa-album {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: calc(50% - 200px/2 - 213px);
+  top: calc(50% - 200px/2 + 114px);
+
+  mix-blend-mode: normal;
+  border-radius: 10px;
+}

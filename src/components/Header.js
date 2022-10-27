@@ -29,7 +29,7 @@ class Header extends React.Component {
         <header data-testid="header-component">
           <h2 data-testid="header-user-name">{userName}</h2>
           <nav className='bar-nav'>
-            <h1 id='trybe'>trybe</h1><h1 id='tunes'>tunes</h1>
+            <h1 id='title1'>trybe</h1><h1 id='title2'>tunes</h1>
             <Link to="/search" data-testid="link-to-search" id='pesquisar'>Pesquisar</Link>
             <Link to="/favorites" data-testid="link-to-favorites" id='favoritos'>Favoritos</Link>
             <Link to="/profile" data-testid="link-to-profile" id='perfil'>Perfil</Link>

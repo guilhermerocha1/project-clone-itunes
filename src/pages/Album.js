@@ -5,6 +5,7 @@ import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../styles/Album.css';
 
 export default class Album extends Component {
   constructor() {
@@ -70,7 +71,7 @@ export default class Album extends Component {
         ? <Loading />
         : (
           <section>
-            <img src={ artworkUrl100 } alt="Capa do album" />
+            <img src={ artworkUrl100 } alt="Capa do album"/>
             <p data-testid="artist-name">{name}</p>
             <p data-testid="album-name">{collection}</p>
             {musics.slice(1).map((song) => {

@@ -24,6 +24,7 @@
   height: 40px;
   left: 600px;
   top: 97px;
+  cursor: pointer;
 
   background: #00D5E2;
   border-radius: 23px;
@@ -58,6 +59,7 @@
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: capitalize;
+  text-decoration: none;
 
   color: #444955;
 }
@@ -76,6 +78,7 @@
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: capitalize;
+  text-decoration: none;
 
   color: #444955;
 }
@@ -94,26 +97,33 @@
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: capitalize;
+  text-decoration: none;
 
   color: #444955;
 }
 
-#trybe {
+#title1 {
   position: absolute;
   width: 102.97px;
   height: 38.13px;
   left: 40px;
   top: 62.82px;
+  font-family: fantasy;
+  font-size: 250%;
+  font-style: italic;
 
   color: #00D5E2;
 }
 
-#tunes {
+#title2 {
   position: absolute;
   width: 103.76px;
   height: 27.06px;
   left: 87.58px;
   top: 102.24px;
+  font-family: fantasy;
+  font-size: 250%;
+  font-style: italic;
 
   color: #003BE5;
 }
