@@ -1,0 +1,51 @@
+.container {
+  margin-left: 300px;
+  margin-top: 80px;
+}
+
+.musicCard {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.container-artista {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.paragraf {
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+h3 {
+  margin-right: 20px;
+  width: 200px;
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+
+  color: #001813;
+}
+
+#artista-name {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+label {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#album-name {
+  font-family: 'Epilogue';
+}
+
+.favorite {
+  width: 100px;
+  color: #EC5050;
+  cursor: pointer;
+}

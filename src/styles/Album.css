@@ -1,0 +1,41 @@
+.album {
+  display: flex;
+  margin: 200px 0px 0 298px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.box-album {
+  padding: 0 10px 0 10px;
+  width: 200px;
+}
+
+img {
+  width: 150px;
+  border-radius: 20px;
+}
+
+#album {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 150%;
+
+  color: #3D495C;
+}
+
+#artista {
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 150%;
+
+  color: #3D495C;
+}
+
+a {
+  text-decoration: none;
+}

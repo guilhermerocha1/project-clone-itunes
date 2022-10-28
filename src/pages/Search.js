@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import Form from '../components/Form';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import '../styles/Search.css';
 
 const MIN_LENGTH_SEARCH = 2;
 
@@ -19,7 +20,7 @@ class Search extends Component {
     };
   }
 
-  handleSearch= ({ target }) => {
+  handleSearch = ({ target }) => {
     const { value } = target;
     this.setState({ input: value });
   }
@@ -41,13 +42,13 @@ class Search extends Component {
         tidInput="search-artist-input"
         tidBtn="search-artist-button"
         id="input-search"
-        value={ input }
-        onChange={ this.handleSearch }
+        value={input}
+        onChange={this.handleSearch}
         txtBtn="Pesquisar"
-        disabled={ activateButton }
-        onClick={ this.FilterAlbum }
+        disabled={activateButton}
+        onClick={this.FilterAlbum}
         className="form"
-        placeholder="Nome do Artista"
+        placeholder="DIGITE SUA PESQUISA"
       />
     );
   }
@@ -57,17 +58,16 @@ class Search extends Component {
     const text = `Resultado de álbuns de: ${search}`;
     return (
       <section className="album">
-        <p>{ text }</p>
         {albumName.map((album) => (
           <Link
-            data-testid={ `link-to-album-${album.collectionId}` }
-            to={ `album/${album.collectionId}` }
-            key={ album.collectionId }
+            data-testid={`link-to-album-${album.collectionId}`}
+            to={`album/${album.collectionId}`}
+            key={album.collectionId}
           >
             <section className="box-album">
-              <img src={ album.artworkUrl100 } alt="Imagem do álbum" />
-              <h1>{album.collectionName}</h1>
-              <h2>{album.artistName}</h2>
+              <img src={album.artworkUrl100} alt="Imagem do álbum" />
+              <p id='album'>{album.collectionName}</p>
+              <p id='artista'>{album.artistName}</p>
             </section>
           </Link>
         ))}

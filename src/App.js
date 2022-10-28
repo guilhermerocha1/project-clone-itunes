@@ -14,7 +14,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <p>TrybeTunes</p>
         <BrowserRouter>
           <Switch>
             <Route path={`/${routeDefault}`} component={ Login } />

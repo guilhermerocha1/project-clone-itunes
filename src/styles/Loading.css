@@ -1,0 +1,16 @@
+.lds-roller {
+  position: absolute;
+  width: 322px;
+  height: 50px;
+  left: 479.45px;
+  top: 300px;
+
+  font-family: 'Epilogue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48.9205px;
+  line-height: 50px;
+  text-align: center;
+
+  color: #003BE5;
+}

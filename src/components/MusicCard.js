@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 export default class MusicCard extends Component {
   render() {
@@ -7,7 +8,7 @@ export default class MusicCard extends Component {
     return (
       <div className="musicCard">
         {thumb && <img src={ thumb } alt="Album da música" />}
-        <h1>{name}</h1>
+        <h3>{name}</h3>
         <audio data-testid="audio-component" src={ preview } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
@@ -15,8 +16,8 @@ export default class MusicCard extends Component {
         </audio>
 
         <label htmlFor={ id }>
-          Favorita
           <input
+            className='favorite'
             type="checkbox"
             data-testid={ `checkbox-music-${id}` }
             id={ id }
