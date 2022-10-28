@@ -7,7 +7,7 @@ export default class MusicCard extends Component {
     return (
       <div className="musicCard">
         {thumb && <img src={ thumb } alt="Album da música" />}
-        <h1>{name}</h1>
+        <h3>{name}</h3>
         <audio data-testid="audio-component" src={ preview } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento

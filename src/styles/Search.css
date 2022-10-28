@@ -131,7 +131,7 @@
 
 h2 {
   margin-top: 550px;
-  margin-left: 50px;
+  margin-left: 90px;
 
   font-family: 'Epilogue';
   font-style: normal;
@@ -140,6 +140,8 @@ h2 {
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: capitalize;
+  font-weight: 400;
+  font-size: 16px;
 
   color: #444955;
 }
