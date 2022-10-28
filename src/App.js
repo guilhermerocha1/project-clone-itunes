@@ -8,7 +8,7 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
-const routeDefault = 'project-clone-itunes';
+const routeDefault = 'clone-itunes';
 
 class App extends React.Component {
   render() {
