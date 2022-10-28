@@ -43,3 +43,9 @@ label {
 #album-name {
   font-family: 'Epilogue';
 }
+
+.favorite {
+  width: 100px;
+  color: #EC5050;
+  cursor: pointer;
+}
