@@ -32,4 +32,4 @@ npm install
     npm test
   ```
 ## Link Projeto
-  [GitHub Pages](https://guilhermerocha1.github.io/project-clone-itunes/)
+  [GitHub Pages](https://guilhermerocha1.github.io/clone-itunes)
